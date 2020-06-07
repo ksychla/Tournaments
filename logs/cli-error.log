@@ -1,0 +1,272 @@
+2020-06-05 09:24:13 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-05 09:27:38 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-05 09:30:45 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:1061
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:192
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:102
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:1061
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:192
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:102
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-05 09:31:01 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-05 09:34:31 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-05 09:43:16 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 107
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [2002] No such file or directory',
+)
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[HY000] [2002] No such file or directory in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php on line 104
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver.php:104
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:114
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php:47
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:401
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:65
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Utility/TableScanner.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-06 10:04:07 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje.users' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 142
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:102
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje.users' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 39
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php:39
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:359
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:362
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:311
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:315
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:140
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/AllCommand.php:102
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
