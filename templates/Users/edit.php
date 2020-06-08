@@ -27,6 +27,7 @@
                     echo $this->Form->control('last_name');
                     echo $this->Form->control('active');
                     echo $this->Form->control('password');
+                    echo $this->Form->control('token');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

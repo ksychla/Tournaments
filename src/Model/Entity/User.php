@@ -15,6 +15,7 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property bool $active
  * @property string $password
+ * @property string $token
  */
 class User extends Entity
 {
@@ -41,6 +42,7 @@ class User extends Entity
         'last_name' => true,
         'active' => true,
         'password' => true,
+        'token' => true,
     ];
 
     /**
@@ -50,5 +52,6 @@ class User extends Entity
      */
     protected $_hidden = [
         'password',
+        'token',
     ];
 }

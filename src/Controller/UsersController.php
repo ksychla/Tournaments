@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\Mailer\TransportFactory;
 use Cake\Utility\Security;
 use Cake\Mailer\Mailer;
@@ -21,7 +22,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login', 'add']);
+        $this->Authentication->addUnauthenticatedActions(['login', 'add', 'verify']);
     }
 
     /**
@@ -63,9 +64,10 @@ class UsersController extends AppController
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->token = (new DefaultPasswordHasher())->hash($user->email);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                $this->verifyViaEmail($user->email, "");
+                $this->verifyViaEmail($user->email, $user->token);
                 return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -102,10 +104,29 @@ class UsersController extends AppController
         $mailer = new Mailer(['from' => 'turnieje.reg.verify@gmail.com', 'transport' => 'gmail']);
         $mailer->setTo($email)
             ->setSubject('Potwierdzenie konta')
-            ->deliver('Dziękujemy za założenie konta w naszym serwisie.
-                          <br>Aktywuj swoje konto klikając w <a href="http://localhost/turnieje/verify'.$token.'"></a>
-                                ');
+            ->deliver('Dziękujemy za założenie konta w naszym serwisie. Aktywuj swoje konto klikając w poniższy link
 
+http://localhost/turnieje/verify?token='.$token);
+
+    }
+
+    public function verify(){
+        if($this->request->is('get')){
+            $token = $this->request->getQuery('token');
+            $user = $this->Users->find('all')
+                ->where(['Users.token = '=>$token]);
+            $this->set('succ', false);
+            if(!$user->isEmpty()){
+                $user = $user->first();
+                $this->set('already', false);
+                if($user->active)
+                    $this->set('already', true);
+                $user->active = true;
+                if ($this->Users->save($user))
+                    $this->set('succ', true);
+            }
+
+        }
     }
 
     public function logout(){

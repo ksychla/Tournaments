@@ -35,6 +35,10 @@
                     <td><?= h($user->password) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Token') ?></th>
+                    <td><?= h($user->token) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>

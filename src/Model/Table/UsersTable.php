@@ -73,7 +73,6 @@ class UsersTable extends Table
 
         $validator
             ->boolean('active')
-//            ->allowEmptyString('active', null, 'create');
             ->notEmptyString('active');
 
         $validator
@@ -81,6 +80,12 @@ class UsersTable extends Table
             ->maxLength('password', 64)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
+
+        $validator
+            ->scalar('token')
+            ->maxLength('token', 64)
+            ->requirePresence('token', 'create')
+            ->notEmptyString('token');
 
         return $validator;
     }
