@@ -15,6 +15,7 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('first_name') ?></th>
                     <th><?= $this->Paginator->sort('last_name') ?></th>
+                    <th><?= $this->Paginator->sort('active') ?></th>
                     <th><?= $this->Paginator->sort('password') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -26,6 +27,7 @@
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->first_name) ?></td>
                     <td><?= h($user->last_name) ?></td>
+                    <td><?= h($user->active) ?></td>
                     <td><?= h($user->password) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>

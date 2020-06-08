@@ -38,6 +38,10 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
+                <tr>
+                    <th><?= __('Active') ?></th>
+                    <td><?= $user->active ? __('Yes') : __('No'); ?></td>
+                </tr>
             </table>
         </div>
     </div>

@@ -223,12 +223,12 @@ form > input[type=submit]:hover, button[type=submit]:hover{
 
 .links{
     text-decoration: none;
-    color: #eee;
+    color: #777;
     transition: color ease-in-out 200ms;
 }
 
 .links:hover{
-    color: #aaa;
+    color: #555;
 }
 
 #header{

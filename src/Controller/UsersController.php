@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Mailer\TransportFactory;
 use Cake\Utility\Security;
+use Cake\Mailer\Mailer;
 
 /**
  * Users Controller
@@ -63,7 +65,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-
+                $this->verifyViaEmail($user->email, "");
                 return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -75,10 +77,35 @@ class UsersController extends AppController
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         if($result->isValid()){
-            return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
+            if($this->Authentication->getIdentity()->active){
+                return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
+            }else{
+                $this->Authentication->logout();
+            }
+
         }else{
 //            echo "NIE ZALOGOWANY";
         }
+    }
+
+    private function verifyViaEmail($email, $token){
+
+        TransportFactory::setConfig('gmail', [
+            'host' => 'smtp.gmail.com',
+            'port' => 587,
+            'username' => 'turnieje.reg.verify@gmail.com',
+            'password' => 'testowehaslo',
+            'className' => 'Smtp',
+            'tls' => true
+        ]);
+
+        $mailer = new Mailer(['from' => 'turnieje.reg.verify@gmail.com', 'transport' => 'gmail']);
+        $mailer->setTo($email)
+            ->setSubject('Potwierdzenie konta')
+            ->deliver('Dziękujemy za założenie konta w naszym serwisie.
+                          <br>Aktywuj swoje konto klikając w <a href="http://localhost/turnieje/verify'.$token.'"></a>
+                                ');
+
     }
 
     public function logout(){

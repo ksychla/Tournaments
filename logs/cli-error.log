@@ -488,3 +488,13 @@ Stack Trace:
 Request URL: /pages/home
 
 
+2020-06-08 08:27:48 Error: [Error] Call to undefined method Migrations\Plugin::load() in /opt/lampp/htdocs/turnieje/config/bootstrap.php on line 181
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/BaseApplication.php:139
+- /opt/lampp/htdocs/turnieje/src/Application.php:50
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:195
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:132
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+

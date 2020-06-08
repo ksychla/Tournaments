@@ -43,6 +43,7 @@ use Cake\Mailer\Mailer;
 use Cake\Mailer\TransportFactory;
 use Cake\Routing\Router;
 use Cake\Utility\Security;
+use Migrations\Plugin;
 
 /*
  * See https://github.com/josegonzalez/php-dotenv for API details.
@@ -176,6 +177,7 @@ ServerRequest::addDetector('tablet', function ($request) {
 
     return $detector->isTablet();
 });
+
 
 /*
  * You can set whether the ORM uses immutable or mutable Time types.

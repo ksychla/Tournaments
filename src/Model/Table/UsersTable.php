@@ -72,6 +72,11 @@ class UsersTable extends Table
             ->notEmptyString('last_name');
 
         $validator
+            ->boolean('active')
+//            ->allowEmptyString('active', null, 'create');
+            ->notEmptyString('active');
+
+        $validator
             ->scalar('password')
             ->maxLength('password', 64)
             ->requirePresence('password', 'create')
