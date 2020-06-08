@@ -29,6 +29,11 @@
             if($this->get('auth')){
                 echo "
                     <div>
+                        <div class='identifier'>";
+                echo $this->get('identity')->first_name;
+                echo " ";
+                echo $this->get('identity')->last_name;
+                echo   "</div>
                         <a class=\"log-button\" href=\"logout\">Wyloguj się</a>
                     </div>";
             }else{

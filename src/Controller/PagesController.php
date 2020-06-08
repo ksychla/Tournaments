@@ -16,11 +16,13 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\Model\Entity\User;
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\View\Exception\MissingTemplateException;
+use App\Model\Table\UsersTable;
 
 /**
  * Static content controller
@@ -55,8 +57,11 @@ class PagesController extends AppController
      */
     public function display(...$path): ?Response
     {
+        $identity = $this->Authentication->getIdentity();
+
         if($this->Authentication->getResult()->isValid()){
             $this->set('auth', true);
+            $this->set('identity', $identity);
         }else{
             $this->set('auth', false);
         }
