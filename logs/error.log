@@ -21714,3 +21714,437 @@ Stack trace:
 #18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
 #19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
 #20 {main}
+2020-06-10 18:43:59 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:43:59 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:45:04 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:45:04 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:45:31 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:45:31 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:45:54 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:45:54 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:46:08 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:46:08 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:46:28 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:46:28 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:46:41 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:46:41 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:50:33 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:50:33 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:51:16 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:51:16 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:52:13 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:52:13 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:53:54 Error: [BadMethodCallException] Unknown finder method "1" on App\Model\Table\DysciplineTable. in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php on line 2470
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:1258
+- /opt/lampp/htdocs/turnieje/templates/Pages/home.php:78
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:1160
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:1121
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:751
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/Controller.php:688
+- /opt/lampp/htdocs/turnieje/src/Controller/PagesController.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/Controller.php:521
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/BaseApplication.php:229
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:124
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:138
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:119
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /opt/lampp/htdocs/turnieje/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-06-10 18:53:54 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:53:54 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:54:34 Error: [BadMethodCallException] Unknown method "get" in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php on line 503
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Query.php:1287
+- /opt/lampp/htdocs/turnieje/templates/Pages/home.php:78
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:1160
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:1121
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/View/View.php:751
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/Controller.php:688
+- /opt/lampp/htdocs/turnieje/src/Controller/PagesController.php:85
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/Controller.php:521
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/BaseApplication.php:229
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/authentication/src/Middleware/AuthenticationMiddleware.php:124
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:138
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:119
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /opt/lampp/htdocs/turnieje/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-06-10 18:54:34 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:54:34 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 18:56:17 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 18:56:17 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 19:17:08 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 19:17:08 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}
+2020-06-10 19:18:47 Warning: Unable to save request. This is probably due to concurrent requests.
+2020-06-10 19:18:47 Warning: PDOException: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php:178
+Stack trace:
+#0 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(178): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/BufferedStatement.php(150): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#3 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(343): Cake\Database\Statement\SqliteStatement->execute()
+#4 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(69): Cake\Database\Connection->Cake\Database\{closure}()
+#5 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(346): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Query.php(245): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(2036): Cake\Database\Query->execute()
+#8 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1928): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#9 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1829): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#10 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1529): Cake\ORM\Table->Cake\ORM\{closure}()
+#11 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php(693): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#12 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Connection->transactional(Object(Closure))
+#13 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php(1830): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#14 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/ToolbarService.php(258): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#15 /opt/lampp/htdocs/turnieje/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php(66): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(73): DebugKit\Middleware\DebugKitMiddleware->process(Object(Cake\Http\ServerRequest), Object(Cake\Http\Runner))
+#17 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Runner.php(58): Cake\Http\Runner->handle(Object(Cake\Http\ServerRequest))
+#18 /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Http/Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(App\Application))
+#19 /opt/lampp/htdocs/turnieje/webroot/index.php(40): Cake\Http\Server->run()
+#20 {main}

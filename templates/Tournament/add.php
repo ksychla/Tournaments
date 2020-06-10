@@ -34,7 +34,6 @@ $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
                         echo "<option value=\"".$row->id."\">".$row->name."</option>";
                     }
                 ?>
-
             </select>
 
             <?php

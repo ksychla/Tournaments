@@ -128,9 +128,16 @@ main > section{
     font-size: 1.15em;
 }
 
+.players_num{
+    color: #888;
+    font-size: 1.15em;
+    text-align: right;
+}
+
 .date{
     font-size: 1.1em;
     padding-top: 10px;
+    text-align: right;
 }
 
 .date-red{

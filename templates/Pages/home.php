@@ -14,6 +14,13 @@
  * @var \App\View\AppView $this
  */
 
+use Cake\ORM\TableRegistry;
+
+$dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline');
+$tournaments = TableRegistry::getTableLocator()->get('Tournament')->find('all');
+$users = TableRegistry::getTableLocator()->get('Users');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -50,14 +57,6 @@
                     </div>";
             }
         ?>
-<!--        <div class="identifier">-->
-<!--            Imie Nazwisko-->
-<!--            <ol>-->
-<!--                <li><a href="/create/tournament">Dodaj turniej</a></li>-->
-<!--                <li><a href="/profile/">Profil</a></li>-->
-<!--                <li><a href="/logout">Wyloguj</a></li>-->
-<!--            </ol>-->
-<!--        </div>-->
 
         <div>
             <input placeholder="Szukaj" id="search">
@@ -69,6 +68,39 @@
         <div id="page-title">
             Turnieje
         </div>
+
+        <?php
+            foreach ($tournaments as $rows){
+                echo "<div class=\"tile\">
+            <a href=\"#\" class=\"link-a\"></a>
+            <div class=\"wrapper\">
+                <div class=\"logo\">";
+                    $dys = $dyscyplines->get($rows->dyscypline);
+                    $org = $users->get($rows->pearson);
+                    echo $this->Html->image('dysciplines/'.$dys->logo, ['alt' => 'tenis.png']);
+            echo "</div>
+            <div class=\"wrap-content\">
+                <div>
+                    <div class=\"name\">".$rows->name."</div>
+                    <div class=\"discipline\">".$org->first_name." ".$org->last_name."</div>
+                    <div class=\"discipline\">".$dys->name."</div>
+                </div>
+                <div>
+                    <div class=\"date date-red\">".
+                        $rows->deadline
+                    ."</div>
+                    <div class=\"players_num\">
+                        Liczba graczy: ".$rows->players."/".$rows->players_limit."
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+            </div>";
+            }
+        ?>
+
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
@@ -81,9 +113,15 @@
                         <div class="discipline">Magda Gessler</div>
                         <div class="discipline">Tenis</div>
                     </div>
-                    <div class="date date-red">
-                        10.06.2020
+                    <div>
+                        <div class="date date-red">
+                            10.06.2020
+                        </div>
+                        <div class="players_num">
+                            Liczba graczy: 3/7
+                        </div>
                     </div>
+
                 </div>
 
             </div>
