@@ -3,6 +3,10 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Tournament $tournament
  */
+
+use Cake\ORM\TableRegistry;
+
+$dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -25,12 +29,12 @@
             ?>
 
             <select name="dyscypline">
-                <option value="1">Tenis</option>
-                <option value="2">Piłka nożna</option>
-                <option value="3">League of Legends</option>
-                <option value="4">Koszykówka</option>
-                <option value="5">Siatkówka</option>
-                <option value="6">Counter strike</option>
+                <?php
+                    foreach ($dyscyplines as $row) {
+                        echo "<option value=\"".$row->id."\">".$row->name."</option>";
+                    }
+                ?>
+
             </select>
 
             <?php

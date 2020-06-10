@@ -72,10 +72,13 @@
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
-                <div class="logo"></div>
+                <div class="logo">
+                    <?php echo $this->Html->image('dysciplines/tenis.png', ['alt' => 'tenis.png']); ?>
+                </div>
                 <div class="wrap-content">
                     <div>
                         <div class="name">Coroczny turniej mistrzów</div>
+                        <div class="discipline">Magda Gessler</div>
                         <div class="discipline">Tenis</div>
                     </div>
                     <div class="date date-red">
@@ -89,7 +92,9 @@
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
-                <div class="logo"></div>
+                <div class="logo">
+                    <?php echo $this->Html->image('dysciplines/bilard.png', ['alt' => 'bilard.png']); ?>
+                </div>
                 <div class="wrap-content">
                     <div>
                         <div class="name">Coroczny turniej mistrzów</div>
@@ -106,7 +111,9 @@
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
-                <div class="logo"></div>
+                <div class="logo">
+                    <?php echo $this->Html->image('dysciplines/koszykowka.png', ['alt' => 'koszykowka.png']); ?>
+                </div>
                 <div class="wrap-content">
                     <div>
                         <div class="name">Coroczny turniej mistrzów</div>
@@ -123,7 +130,9 @@
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
-                <div class="logo"></div>
+                <div class="logo">
+                    <?php echo $this->Html->image('dysciplines/noga.png', ['alt' => 'noga.png']); ?>
+                </div>
                 <div class="wrap-content">
                     <div>
                         <div class="name">Coroczny turniej mistrzów</div>
@@ -140,7 +149,9 @@
         <div class="tile">
             <a href="#" class="link-a"></a>
             <div class="wrapper">
-                <div class="logo"></div>
+                <div class="logo">
+                    <?php echo $this->Html->image('dysciplines/siatkowka.png', ['alt' => 'siatkowka.png']); ?>
+                </div>
                 <div class="wrap-content">
                     <div>
                         <div class="name">Coroczny turniej mistrzów</div>

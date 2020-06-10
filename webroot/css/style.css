@@ -107,6 +107,11 @@ main > section{
     background-color: #eee;
 }
 
+.logo > img{
+    width: 100%;
+    height: 100%;
+}
+
 .wrap-content{
     margin-left: 10px;
     display: flex;
