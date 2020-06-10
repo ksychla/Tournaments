@@ -498,3 +498,83 @@ Stack Trace:
 
 
 
+2020-06-10 13:47:41 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje2.tournament_player' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 142
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje2.tournament_player' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 39
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php:39
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:359
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:362
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:311
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:315
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:140
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+
+2020-06-10 13:48:24 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje2.player_place' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 142
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'turnieje2.player_place' doesn't exist in /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 39
+Stack Trace:
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php:39
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:359
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:362
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:311
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:69
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Connection.php:315
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:140
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:100
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php:84
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:509
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/ORM/Table.php:649
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:200
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:123
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:99
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/bake/src/Command/ModelCommand.php:82
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/BaseCommand.php:175
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:336
+- /opt/lampp/htdocs/turnieje/vendor/cakephp/cakephp/src/Console/CommandRunner.php:171
+- /opt/lampp/htdocs/turnieje/bin/cake.php:12
+
+
+

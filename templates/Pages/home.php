@@ -28,13 +28,15 @@
         <?php
             if($this->get('auth')){
                 echo "
-                    <div>
-                        <div class='identifier'>";
+                    <div class=\"identifier\">";
                 echo $this->get('identity')->first_name;
                 echo " ";
                 echo $this->get('identity')->last_name;
-                echo   "</div>
-                        <a class=\"log-button\" href=\"logout\">Wyloguj się</a>
+                echo   "<ol>
+                            <li><a href=\"create/tournament\">Dodaj turniej</a></li>
+                            <li><a href=\"profile/\">Profil</a></li>
+                            <li><a href=\"logout\">Wyloguj</a></li>
+                        </ol>
                     </div>";
             }else{
                 echo "
@@ -48,7 +50,14 @@
                     </div>";
             }
         ?>
-
+<!--        <div class="identifier">-->
+<!--            Imie Nazwisko-->
+<!--            <ol>-->
+<!--                <li><a href="/create/tournament">Dodaj turniej</a></li>-->
+<!--                <li><a href="/profile/">Profil</a></li>-->
+<!--                <li><a href="/logout">Wyloguj</a></li>-->
+<!--            </ol>-->
+<!--        </div>-->
 
         <div>
             <input placeholder="Szukaj" id="search">

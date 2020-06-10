@@ -67,6 +67,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/register', ['controller' => 'Users', 'action' => 'add']);
     $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
     $builder->connect('/verify/*', ['controller' => 'Users', 'action' => 'verify']);
+    $builder->connect('/create/tournament', ['controller' => 'Tournament', 'action' => 'add']);
 
 
     /*

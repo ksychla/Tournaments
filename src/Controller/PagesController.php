@@ -58,7 +58,6 @@ class PagesController extends AppController
     public function display(...$path): ?Response
     {
         $identity = $this->Authentication->getIdentity();
-
         if($this->Authentication->getResult()->isValid()){
             $this->set('auth', true);
             $this->set('identity', $identity);

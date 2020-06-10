@@ -17,6 +17,7 @@ nav{
 #nav-flex{
     display: flex;
     justify-content: space-between;
+    height: 30px;
 }
 
 .log-button{
@@ -192,7 +193,7 @@ form{
     margin-top: 30px;
 }
 
-form input, button[type=submit]{
+form input, button[type=submit], form textarea, form select{
     width: 90%;
     height: 35px;
     font-size: 1.1em;
@@ -200,10 +201,15 @@ form input, button[type=submit]{
     margin: 15px auto;
     border-radius: 5px;
     border: none;
+    resize: none;
 }
 
-form input[type=email], form input[type=password], form input[type=text]{
+form input[type=email], form input[type=password], form input[type=text], form input[type=number], form input[type=date], textarea, form select{
     padding-left: 10px;
+}
+
+form label{
+    margin-left: 15px;
 }
 
 form input[type=submit], button[type=submit]{
@@ -273,6 +279,13 @@ form > input[type=submit]:hover, button[type=submit]:hover, .verify-button:hover
     color: #eee;
     font-size: 20px;
     display: inline-block;
+    transition: color 500ms ease;
+    padding: 0 10px 10px 10px;
+}
+
+.identifier:hover{
+    cursor: pointer;
+    color: #ccc;
 }
 
 .flex-div-verification{
@@ -283,3 +296,36 @@ form > input[type=submit]:hover, button[type=submit]:hover, .verify-button:hover
 .verification{
     margin-top: 100px;
 }
+
+.identifier:hover ol{
+    display: block;
+}
+
+ol{
+    margin-top: 0;
+    margin-left: -50px;
+    display: none;
+}
+
+ol > li{
+    list-style-type: none;
+    background-color: #2b2b2b;
+    padding: 20px 25px;
+    font-size: 18px;
+    border-bottom: #1a1a1a dashed 1px;
+}
+
+ol > li:hover{
+    background-color: #1a1a1a;
+}
+
+ol > li a{
+    text-decoration: none;
+    color: #eee;
+    display: block;
+}
+
+ol > li a:focus{
+    outline: none;
+}
+
