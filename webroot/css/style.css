@@ -103,10 +103,9 @@ main > section{
 
 .logo{
     height: 130px;
-    width: 130px;
+    width: 130px !important;
     background-color: #eee;
 }
-
 .logo > img{
     width: 100%;
     height: 100%;
@@ -322,7 +321,7 @@ ol{
 ol > li{
     list-style-type: none;
     background-color: #2b2b2b;
-    padding: 20px 25px;
+
     font-size: 18px;
     border-bottom: #1a1a1a dashed 1px;
 }
@@ -335,9 +334,167 @@ ol > li a{
     text-decoration: none;
     color: #eee;
     display: block;
+    height: 100%;
+    width: 100%;
+    padding: 20px 25px;
 }
 
 ol > li a:focus{
     outline: none;
 }
 
+.tournament_header{
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+}
+
+.header_link{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header_link > button{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.header_link > button:hover{
+    cursor: pointer;
+}
+
+.header_link:hover{
+    background-color: #ddd;
+    color: #2b2b2b;
+    cursor: pointer;
+}
+
+.header_link > button:focus{
+    outline: none !important;
+}
+
+.tournament_name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2b2b2b;
+}
+
+.tournament_name > div{
+    z-index: 10;
+}
+
+.tournament_info{
+    height: 400px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    transition: height 200ms ease;
+}
+
+.tournament_info > div{
+    height: 100%;
+    width: 100%;
+}
+
+.tournament_info > div:first-child{
+    border-right: #aaa solid 2px;
+}
+
+#googleMap{
+    width: 80%;
+    height: 80%;
+    border:0;
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.location > div:first-child{
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.join_button{
+    width: 120px;
+    background-color: #2b2b2b;
+}
+
+.join_button > a{
+    text-decoration: none;
+    color: #eee;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.t_desc{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.t_desc > div{
+    margin-top: 10px;
+}
+
+.t_desc > div{
+    padding-left: 50px;
+}
+
+.t_desc > div:last-child{
+    padding-left: 0;
+    margin-left: 50px;
+}
+
+.flex-tournament-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hidden_info{
+    height: 0;
+    padding: 0;
+}
+
+.sponsors{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.sponsors > div{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sponsors > div > img{
+    height: 150px;
+    width: 150px;
+}
+
+.sub-cat{
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 30px;
+}

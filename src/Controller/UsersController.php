@@ -37,6 +37,13 @@ class UsersController extends AppController
         $this->set(compact('users'));
     }
 
+    public function profile(){
+        $identity = $this->Authentication->getIdentity();
+        if($this->Authentication->getResult()->isValid()){
+            $this->set('identity', $identity);
+        }
+    }
+
     /**
      * View method
      *

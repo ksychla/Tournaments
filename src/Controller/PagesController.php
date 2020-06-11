@@ -59,10 +59,7 @@ class PagesController extends AppController
     {
         $identity = $this->Authentication->getIdentity();
         if($this->Authentication->getResult()->isValid()){
-            $this->set('auth', true);
             $this->set('identity', $identity);
-        }else{
-            $this->set('auth', false);
         }
 
         if (!$path) {
