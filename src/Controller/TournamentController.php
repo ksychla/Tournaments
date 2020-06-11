@@ -23,6 +23,18 @@ class TournamentController extends AppController
         $this->set(compact('tournament'));
     }
 
+    public function search(){
+        $identity = $this->Authentication->getIdentity();
+        if($this->Authentication->getResult()->isValid()){
+            $this->set('identity', $identity);
+        }
+        $query = $this->request->getQuery('q');
+        if(!$query){
+            $this->redirect('/');
+        }
+        $this->set('q', $query);
+    }
+
     public function display(){
         $identity = $this->Authentication->getIdentity();
         if($this->Authentication->getResult()->isValid()){
@@ -32,6 +44,7 @@ class TournamentController extends AppController
         if($this->Tournament->exists(array('id'=>$id))){
             $tournament = $this->Tournament->get($id);
             $this->set('tournament', $tournament);
+
         }else{
             return $this->redirect('/');
         }

@@ -481,14 +481,14 @@ ol > li a:focus{
 }
 
 .sponsors > div{
-    flex-basis: 25%;
+    flex-basis: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.sponsors > div > img{
+.sponsors > div  img{
     height: 150px;
     width: 150px;
 }
@@ -497,4 +497,55 @@ ol > li a:focus{
     font-size: 1.3em;
     text-align: center;
     margin-top: 30px;
+}
+
+#arrow-nav{
+    display: none;
+}
+
+#search-glass{
+    display: none;
+}
+
+#search-glass > button{
+    background-color: transparent;
+    border: none;
+    color: #eee;
+    font-size: 1.2em;
+    transition: color 200ms ease-in-out;
+}
+
+#search-glass > button:hover{
+    cursor: pointer;
+    color: #ccc;
+}
+
+@media screen and (max-width: 600px){
+    #arrow-nav{
+        display: block;
+    }
+    #name-nav{
+        display: none;
+    }
+    #search-glass{
+        display: block;
+    }
+    #search-text{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #arrow-nav{
+        display: none;
+    }
+    #name-nav{
+        display: block;
+    }
+    #search-glass{
+        display: none;
+    }
+    #search-text{
+        display: block;
+    }
 }

@@ -1,11 +1,26 @@
 <?php
+
+use Cake\ORM\TableRegistry;
+
 $tournament = $this->get('tournament');
+$dysc = TableRegistry::getTableLocator()->get('Dyscipline')->get($tournament->dyscypline);
+$user = TableRegistry::getTableLocator()->get('Users')->get($tournament->pearson);
+
+function prepareForGoogleMaps($location){
+    $regexp = "/\\s*,\\s*/";
+    $loc = preg_replace($regexp, ",", $location);
+    $regexp = "/\\s+/";
+    return preg_replace($regexp, "+", $loc);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Turnieje</title>
+    <meta name="viewport" content="width=device-width">
+    <title>
+        <?php echo $tournament->name; ?>
+    </title>
     <?php echo $this->Html->css("style") ?>
     <?php echo $this->Html->css("fontello") ?>
     <?php echo $this->Html->css("gracket") ?>
@@ -26,10 +41,10 @@ $tournament = $this->get('tournament');
                     </div>
                     <div class="tournament_name">
                         <div class="name">
-                            Nazwa turnieju
+                            <?php echo $tournament->name; ?>
                         </div>
                         <div class="discipline">
-                            Dyscyplina
+                            <?php echo $dysc->name; ?>
                         </div>
                     </div>
                     <div style="z-index: 20;">
@@ -42,16 +57,16 @@ $tournament = $this->get('tournament');
             <div class="tournament_info hidden_info" id="tournament_info">
                 <div class="t_desc" id="t_desc">
                     <div>
-                        Data: 10.06.2020
+                        Data: <?php echo (new DateTime($tournament->time))->format("d-m-Y"); ?>
                     </div>
                     <div>
-                        Deadline: 06.0.6.2020
+                        Deadline: <?php echo (new DateTime($tournament->deadline))->format("d-m-Y"); ?>
                     </div>
                     <div>
-                        Liczba uczestników: 8/10
+                        Liczba uczestników: <?php echo $tournament->players."/".$tournament->players_limit; ?>
                     </div>
                     <div class="join_button">
-                        <a href="#">Dołącz</a>
+                        <a href="#">Dołącz</a>  <!-- TODO -->
                     </div>
                 </div>
                 <div class="location" id="location">
@@ -60,13 +75,13 @@ $tournament = $this->get('tournament');
                     </div>
                     <iframe
                         id="googleMap"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR1vziUo8-2PhOfYM079eSFzcN_jz_ozc&q=Poznan,Piotrowo+4" allowfullscreen>
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR1vziUo8-2PhOfYM079eSFzcN_jz_ozc&q=<?php echo prepareForGoogleMaps($tournament->location) ?>"  allowfullscreen>
                     </iframe>
                 </div>
             </div>
             <div>
                 <div>
-                    <div class="my_gracket"></div>
+                    <div class="my_gracket"></div>   <!-- TODO -->
                 </div>
 
 
@@ -125,31 +140,44 @@ $tournament = $this->get('tournament');
                 </script>
             </div>
             <div class="discipline sub-cat">
-                Sponsorzy
+                Sponsorzy    <!-- TODO -->
             </div>
             <div class="sponsors">
                 <div>
-                    <?php echo $this->Html->image('sponsors/politechnika.png', ['alt' => 'put.png']); ?>
+                    <a href="https://www.volkswagen.pl/" target="_blank">
+                        <?php echo $this->Html->image('sponsors/politechnika.png', ['alt' => 'put.png']); ?>
+                    </a>
                 </div>
                 <div>
-                    <?php echo $this->Html->image('sponsors/rmf.png', ['alt' => 'tenis.png']); ?>
+                    <a href="https://www.volkswagen.pl/" target="_blank">
+                        <?php echo $this->Html->image('sponsors/rmf.png', ['alt' => 'put.png']); ?>
+                    </a>
                 </div>
                 <div>
-                    <?php echo $this->Html->image('sponsors/tvn.png', ['alt' => 'tenis.png']); ?>
+                    <a href="https://www.volkswagen.pl/" target="_blank">
+                        <?php echo $this->Html->image('sponsors/netflix.png', ['alt' => 'put.png']); ?>
+                    </a>
                 </div>
                 <div>
-                    <?php echo $this->Html->image('sponsors/volks.png', ['alt' => 'tenis.png']); ?>
+                    <a href="https://www.volkswagen.pl/" target="_blank">
+                        <?php echo $this->Html->image('sponsors/volks.png', ['alt' => 'put.png']); ?>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.volkswagen.pl/" target="_blank">
+                        <?php echo $this->Html->image('sponsors/tvn.png', ['alt' => 'put.png']); ?>
+                    </a>
                 </div>
             </div>
             <div class="discipline sub-cat">
                 Organizator
             </div>
             <div style="display: flex; align-items: center; flex-direction: column; margin: 10px 0;">
-                <div style="text-align: left;">
-                    Imie Nazwisko
+                <div class="discipline">
+                    <?php echo $user->first_name." ".$user->last_name; ?>
                 </div>
-                <div style="text-align: left;">
-                    Email
+                <div class="discipline">
+                    <?php echo $user->email; ?>
                 </div>
             </div>
         </section>

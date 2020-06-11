@@ -14,6 +14,7 @@
  * @var \App\View\AppView $this
  */
 
+use Cake\I18n\Time;
 use Cake\ORM\TableRegistry;
 
 $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline');
@@ -28,6 +29,7 @@ $users = TableRegistry::getTableLocator()->get('Users');
     <meta charset="UTF-8">
     <title>Turnieje</title>
     <?php echo $this->Html->css("style") ?>
+    <?php echo $this->Html->css("fontello") ?>
 </head>
 <body>
     <?php echo $this->element('navbar') ?>
@@ -54,8 +56,16 @@ $users = TableRegistry::getTableLocator()->get('Users');
                     <div class=\"discipline\">".$dys->name."</div>
                 </div>
                 <div>
-                    <div class=\"date date-red\">".
-                        $rows->deadline
+                    <div class='date ";
+            $today = new DateTime();
+            $deadline = new DateTime($rows->deadline);
+            if($today->diff($deadline)->d > 5)
+                echo "date-green'>";
+            else if($today->diff($deadline)->d > 0)
+                echo "date-yellow'>";
+            else
+                echo "date-red'>";
+                        echo $deadline->format('d-m-Y')
                     ."</div>
                     <div class=\"players_num\">
                         Liczba graczy: ".$rows->players."/".$rows->players_limit."

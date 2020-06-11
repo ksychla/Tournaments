@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property string $logo
+ * @property string|null $link
  */
 class Sponsor extends Entity
 {
@@ -26,5 +27,6 @@ class Sponsor extends Entity
     protected $_accessible = [
         'name' => true,
         'logo' => true,
+        'link' => true,
     ];
 }

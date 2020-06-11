@@ -40,6 +40,12 @@ class SponsorTable extends Table
         $this->setTable('sponsor');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->belongsToMany('Tournament', [
+            'foreignKey' => 'sponsor_id',
+            'targetForeignKey' => 'tournament_id',
+            'joinTable' => 'tournament_sponsor',
+        ]);
     }
 
     /**
@@ -64,6 +70,11 @@ class SponsorTable extends Table
             ->scalar('logo')
             ->requirePresence('logo', 'create')
             ->notEmptyString('logo');
+
+        $validator
+            ->scalar('link')
+            ->maxLength('link', 100)
+            ->allowEmptyString('link');
 
         return $validator;
     }

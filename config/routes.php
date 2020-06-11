@@ -70,6 +70,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/profile/', ['controller' => 'Users', 'action' => 'profile']);
     $builder->connect('/create/tournament', ['controller' => 'Tournament', 'action' => 'add']);
     $builder->connect('/tournament', ['controller' => 'Tournament', 'action' => 'display']);
+    $builder->connect('/search', ['controller' => 'Tournament', 'action' => 'search']);
 
 
     /*
