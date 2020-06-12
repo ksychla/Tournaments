@@ -47,12 +47,9 @@ $sponsor_table = TableRegistry::getTableLocator()->get('Sponsor')->find('all');
             <select onchange="add_sponsor()" id="select_sponsor">
                 <?php
                     foreach ($sponsor_table as $row){
-                        echo "<option value='".$row->id."'>".$row->name."</option>";
+                        echo "<option value='".$row->id.";".$row->name."'>".$row->name."</option>";
                     }
                 ?>
-<!--                <option value="1">Lole</option>-->
-<!--                <option value="2">Halo</option>-->
-<!--                <option value="3">nope</option>-->
             </select>
             <div id="sponsors_list">
             </div>

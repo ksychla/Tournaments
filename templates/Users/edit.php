@@ -3,35 +3,32 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
  */
+
+$profile = $this->get('identity');
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="users form content">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $profile->first_name." ".$profile->last_name;?></title>
+    <?php echo $this->Html->css("style") ?>
+    <?php echo $this->Html->css("fontello") ?>
+</head>
+<body>
+<?php echo $this->element('navbar') ?>
+<main>
+    <section>
+        <div>
             <?= $this->Form->create($user) ?>
-            <fieldset>
-                <legend><?= __('Edit User') ?></legend>
-                <?php
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('first_name');
-                    echo $this->Form->control('last_name');
-                    echo $this->Form->control('active');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('token');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?php
+            echo $this->Form->control('email', ['label'=>'Email']);
+            echo $this->Form->control('first_name', ['label'=>'Imię']);
+            echo $this->Form->control('last_name', ['label'=>'Nazwisko']);
+            ?>
+            <?= $this->Form->button(__('Zapisz')) ?>
             <?= $this->Form->end() ?>
         </div>
-    </div>
-</div>
+    </section>
+</main>
+</body>
+</html>

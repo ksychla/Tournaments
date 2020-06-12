@@ -28,7 +28,7 @@
                         <a class=\"log-button\" href=\"login\">
                             Zaloguj się
                         </a>
-                        <a class=\"log-button\" href=\"register\">
+                        <a class=\"log-button\" href=\"register\" id='register'>
                             Zarejestruj się
                         </a>
                     </div>";

@@ -84,24 +84,16 @@ class TournamentController extends AppController
         if ($this->request->is('post')) {
             $tournament = $this->Tournament->patchEntity($tournament, $this->request->getData());
 
-
             $tournament->pearson = $this->Authentication->getIdentity()->id;
             $tournament->players = 0;
             if ($this->Tournament->save($tournament)) {
-                echo "Sponsor: ";
-                $good = true;
-                $iter = 0;
-                while ($good){
-                    if(array_key_exists('sponsors'.$iter, $this->request->getData())){
-                        $sponsor = $sponsors->newEmptyEntity();
-                        $sponsor->tournament = $tournament->id;
-                        $sponsor->sponsor = $this->request->getData()['sponsors'.$iter];
-                        $sponsors->save($sponsor);
-                    } else {
-                        $good = false;
-                    }
-
-                    $iter += 1;
+                foreach (array_keys($this->request->getData()) as $key){
+                    if(!preg_match("/sponsors/", $key, $match))
+                        continue;
+                    $sponsor = $sponsors->newEmptyEntity();
+                    $sponsor->tournament = $tournament->id;
+                    $sponsor->sponsor = $this->request->getData()[$key];
+                    $sponsors->save($sponsor);
                 }
                 $this->Flash->success(__('The tournament has been saved.'));
                 return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);

@@ -152,9 +152,13 @@ http://localhost/turnieje/verify?token='.$token);
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit()
     {
-        $user = $this->Users->get($id, [
+        $identity = $this->Authentication->getIdentity();
+        if($this->Authentication->getResult()->isValid()){
+            $this->set('identity', $identity);
+        }
+        $user = $this->Users->get($identity->id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -162,7 +166,7 @@ http://localhost/turnieje/verify?token='.$token);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect('/');
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
