@@ -7,6 +7,8 @@
 use Cake\ORM\TableRegistry;
 
 $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
+$sponsor_table = TableRegistry::getTableLocator()->get('Sponsor')->find('all');
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -14,8 +16,10 @@ $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
     <meta charset="UTF-8">
     <title>Stwórz turniej</title>
     <?php echo $this->Html->css("style") ?>
+    <?php echo $this->Html->css("fontello") ?>
 </head>
 <body>
+<?php echo $this->element('navbar') ?>
 <main>
     <section>
         <div id="login-container" style="margin-top: 50px;">
@@ -23,10 +27,7 @@ $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
                 Stwórz turniej
             </div>
             <?= $this->Form->create($tournament) ?>
-            <?php
-            echo $this->Form->control('name', array('label'=>false, 'placeholder'=>'Nazwa'));
-//            echo $this->Form->control('dyscypline', array('label'=>false, 'placeholder'=>'Dyscyplina'));
-            ?>
+            <?php echo $this->Form->control('name', array('label'=>false, 'placeholder'=>'Nazwa')); ?>
 
             <select name="dyscypline">
                 <?php
@@ -42,10 +43,25 @@ $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline')->find('all');
             echo $this->Form->control('players_limit', array('label'=>false, 'placeholder'=>'Limit graczy'));
             echo $this->Form->control('deadline', array('label'=>'Deadline rejestracji'));
             ?>
+
+            <select onchange="add_sponsor()" id="select_sponsor">
+                <?php
+                    foreach ($sponsor_table as $row){
+                        echo "<option value='".$row->id."'>".$row->name."</option>";
+                    }
+                ?>
+<!--                <option value="1">Lole</option>-->
+<!--                <option value="2">Halo</option>-->
+<!--                <option value="3">nope</option>-->
+            </select>
+            <div id="sponsors_list">
+            </div>
+
             <?= $this->Form->button(__('Zapisz')) ?>
             <?= $this->Form->end() ?>
         </div>
     </section>
 </main>
+<?php echo $this->Html->script('add_tournament') ?>
 </body>
 </html>

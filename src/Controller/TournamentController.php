@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
+
 /**
  * Tournament Controller
  *
@@ -73,14 +75,35 @@ class TournamentController extends AppController
      */
     public function add()
     {
+        $identity = $this->Authentication->getIdentity();
+        if($this->Authentication->getResult()->isValid()){
+            $this->set('identity', $identity);
+        }
         $tournament = $this->Tournament->newEmptyEntity();
+        $sponsors = TableRegistry::getTableLocator()->get('TournamentSponsor');
         if ($this->request->is('post')) {
             $tournament = $this->Tournament->patchEntity($tournament, $this->request->getData());
+
+
             $tournament->pearson = $this->Authentication->getIdentity()->id;
             $tournament->players = 0;
             if ($this->Tournament->save($tournament)) {
-                $this->Flash->success(__('The tournament has been saved.'));
+                echo "Sponsor: ";
+                $good = true;
+                $iter = 0;
+                while ($good){
+                    if(array_key_exists('sponsors'.$iter, $this->request->getData())){
+                        $sponsor = $sponsors->newEmptyEntity();
+                        $sponsor->tournament = $tournament->id;
+                        $sponsor->sponsor = $this->request->getData()['sponsors'.$iter];
+                        $sponsors->save($sponsor);
+                    } else {
+                        $good = false;
+                    }
 
+                    $iter += 1;
+                }
+                $this->Flash->success(__('The tournament has been saved.'));
                 return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
             }
             $this->Flash->error(__('The tournament could not be saved. Please, try again.'));
