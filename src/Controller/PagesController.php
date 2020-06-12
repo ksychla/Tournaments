@@ -61,6 +61,12 @@ class PagesController extends AppController
         if($this->Authentication->getResult()->isValid()){
             $this->set('identity', $identity);
         }
+        $page_num = $this->request->getQuery('page');
+        if($page_num)
+            $this->set('page_num', $page_num);
+        $search = $this->request->getQuery('search');
+        if($search)
+            $this->set('search', $search);
 
         if (!$path) {
             return $this->redirect('/');

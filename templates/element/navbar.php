@@ -37,7 +37,7 @@
 
         <div>
             <div id="search-text">
-                <input placeholder="Szukaj" id="search" onfocusout="searchOnUnFocus()" onkeypress="searchTournament(event)">
+                <input placeholder="Szukaj" id="search" onfocusout="searchOnUnFocus()" onkeypress=" searchTournament(event)">
             </div>
             <div id="search-glass">
                 <button onclick="glassOnClick()">

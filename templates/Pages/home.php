@@ -17,10 +17,17 @@
 use Cake\I18n\Time;
 use Cake\ORM\TableRegistry;
 
+$search = $this->get('search');
 $dyscyplines = TableRegistry::getTableLocator()->get('Dyscipline');
-$tournaments = TableRegistry::getTableLocator()->get('Tournament')->find('all');
-$users = TableRegistry::getTableLocator()->get('Users');
+if($search){
+    $tournaments = TableRegistry::getTableLocator()->get('Tournament')->find('all', ['conditions'=>['name LIKE'=>'%'.$search.'%']]);
+} else {
+    $tournaments = TableRegistry::getTableLocator()->get('Tournament')->find('all');
+}
 
+$users = TableRegistry::getTableLocator()->get('Users');
+$page_num = $this->get('page_num');
+$pages = $tournaments->count();
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +47,13 @@ $users = TableRegistry::getTableLocator()->get('Users');
         </div>
 
         <?php
-            foreach ($tournaments as $rows){
+            $i = 0;
+            if(!$page_num)
+                $page_num = 1;
+            foreach ($tournaments->skip(10*($page_num-1)) as $rows){
+                $i+=1;
+                if($i >10)
+                    break;
                 echo "<div class=\"tile\">
             <a href=\"tournament?id=".$rows->id."\" class=\"link-a\"></a>
             <div class=\"wrapper\">
@@ -81,11 +94,24 @@ $users = TableRegistry::getTableLocator()->get('Users');
     </section>
     <section>
         <div id="nav-bar">
-            <div><</div>
-            <div class="active">1</div>
-            <div class="inactive">2</div>
-            <div class="inactive">3</div>
-            <div>></div>
+            <?php
+            echo "<div class='";
+            if($page_num == 1)
+                echo "inactive'><</div>";
+            else
+                echo "active-diff'><a href='/turnieje?page=".($page_num-1)."'><</a></div>";
+            for($i=0; $i<$pages/10;$i++){
+                echo "<div class='active";
+                if($i+1 != $page_num)
+                    echo "-diff";
+                echo "'><a href='/turnieje?page=".($i+1)."'>".($i+1)."</a></div>";
+            }
+            echo "<div class='";
+            if($page_num == intval($pages/10)+1)
+                echo "inactive'>></div>";
+            else
+                echo "active-diff'><a href='/turnieje?page=".($page_num+1)."'>></a></div>";
+            ?>
         </div>
     </section>
 </main>

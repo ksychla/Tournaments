@@ -5,6 +5,8 @@ use Cake\ORM\TableRegistry;
 $tournament = $this->get('tournament');
 $dysc = TableRegistry::getTableLocator()->get('Dyscipline')->get($tournament->dyscypline);
 $user = TableRegistry::getTableLocator()->get('Users')->get($tournament->pearson);
+$sponsorTour = TableRegistry::getTableLocator()->get('TournamentSponsor')->find('all', ['conditions'=>['tournament'=>$tournament->id]]);
+$sponsors = TableRegistry::getTableLocator()->get('Sponsor');
 
 function prepareForGoogleMaps($location){
     $regexp = "/\\s*,\\s*/";
@@ -143,31 +145,39 @@ function prepareForGoogleMaps($location){
                 Sponsorzy    <!-- TODO -->
             </div>
             <div class="sponsors">
-                <div>
-                    <a href="https://www.volkswagen.pl/" target="_blank">
-                        <?php echo $this->Html->image('sponsors/politechnika.png', ['alt' => 'put.png']); ?>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.volkswagen.pl/" target="_blank">
-                        <?php echo $this->Html->image('sponsors/rmf.png', ['alt' => 'put.png']); ?>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.volkswagen.pl/" target="_blank">
-                        <?php echo $this->Html->image('sponsors/netflix.png', ['alt' => 'put.png']); ?>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.volkswagen.pl/" target="_blank">
-                        <?php echo $this->Html->image('sponsors/volks.png', ['alt' => 'put.png']); ?>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.volkswagen.pl/" target="_blank">
-                        <?php echo $this->Html->image('sponsors/tvn.png', ['alt' => 'put.png']); ?>
-                    </a>
-                </div>
+                <?php
+                    foreach ($sponsorTour as $row){
+                        echo "<div>";
+                        echo "<a href='".$sponsors->get($row->sponsor)->link."' target='_blank'>";
+                        echo $this->Html->image('sponsors/'.$sponsors->get($row->sponsor)->logo, ['alt' => $sponsors->get($row->sponsor)->name]);
+                        echo "</a></div>";
+                    }
+                ?>
+<!--                <div>-->
+<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
+<!--                        --><?php //echo $this->Html->image('sponsors/politechnika.png', ['alt' => 'put.png']); ?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
+<!--                        --><?php //echo $this->Html->image('sponsors/rmf.png', ['alt' => 'put.png']); ?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
+<!--                        --><?php //echo $this->Html->image('sponsors/netflix.png', ['alt' => 'put.png']); ?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
+<!--                        --><?php //echo $this->Html->image('sponsors/volks.png', ['alt' => 'put.png']); ?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
+<!--                        --><?php //echo $this->Html->image('sponsors/tvn.png', ['alt' => 'put.png']); ?>
+<!--                    </a>-->
+<!--                </div>-->
             </div>
             <div class="discipline sub-cat">
                 Organizator

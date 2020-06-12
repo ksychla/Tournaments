@@ -17,6 +17,6 @@ function searchOnUnFocus() {
 
 function searchTournament(e) {
     if(e.keyCode === 13){
-        window.location.replace("/turnieje/search?q="+search.value);
+        window.location.replace("/turnieje?search="+search.value);
     }
 }
