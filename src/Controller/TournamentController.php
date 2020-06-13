@@ -103,6 +103,7 @@ class TournamentController extends AppController
         $this->set(compact('tournament'));
     }
 
+
     /**
      * Edit method
      *
@@ -110,8 +111,19 @@ class TournamentController extends AppController
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit()
     {
+        $identity = $this->Authentication->getIdentity();
+        if($this->Authentication->getResult()->isValid()){
+            $this->set('identity', $identity);
+        }
+        if($this->request->is('get')){
+            if($this->request->getQuery('id'))
+                $id = $this->request->getQuery('id');
+            else
+                return $this->redirect('/');
+        }
+
         $tournament = $this->Tournament->get($id, [
             'contain' => [],
         ]);
@@ -120,7 +132,7 @@ class TournamentController extends AppController
             if ($this->Tournament->save($tournament)) {
                 $this->Flash->success(__('The tournament has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect('/');
             }
             $this->Flash->error(__('The tournament could not be saved. Please, try again.'));
         }
@@ -144,6 +156,6 @@ class TournamentController extends AppController
             $this->Flash->error(__('The tournament could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect('/');
     }
 }

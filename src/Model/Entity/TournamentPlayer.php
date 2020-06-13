@@ -11,6 +11,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $player
  * @property int $tournament
+ * @property int|null $licence
+ * @property int|null $rank
  */
 class TournamentPlayer extends Entity
 {
@@ -26,5 +28,7 @@ class TournamentPlayer extends Entity
     protected $_accessible = [
         'player' => true,
         'tournament' => true,
+        'licence' => true,
+        'rank' => true,
     ];
 }

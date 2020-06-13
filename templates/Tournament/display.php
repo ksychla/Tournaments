@@ -7,6 +7,9 @@ $dysc = TableRegistry::getTableLocator()->get('Dyscipline')->get($tournament->dy
 $user = TableRegistry::getTableLocator()->get('Users')->get($tournament->pearson);
 $sponsorTour = TableRegistry::getTableLocator()->get('TournamentSponsor')->find('all', ['conditions'=>['tournament'=>$tournament->id]]);
 $sponsors = TableRegistry::getTableLocator()->get('Sponsor');
+$identity = $this->get('identity');
+$player = TableRegistry::getTableLocator()->get('TournamentPlayer')->find('all')->where(['player'=>$identity->id, 'tournament'=>$tournament->id])->first();
+
 
 function prepareForGoogleMaps($location){
     $regexp = "/\\s*,\\s*/";
@@ -68,7 +71,12 @@ function prepareForGoogleMaps($location){
                         Liczba uczestników: <?php echo $tournament->players."/".$tournament->players_limit; ?>
                     </div>
                     <div class="join_button">
-                        <a href="#">Dołącz</a>  <!-- TODO -->
+                        <?php
+                            if($tournament->pearson == $identity->id)
+                                echo "<a href='/turnieje/tournament/edit?id=".$tournament->id."'>Edytuj</a>";
+                            else if(!$player)
+                                echo "<a href='/turnieje/tournament/join?id=".$tournament->id."'>Dołącz</a>";
+                        ?>
                     </div>
                 </div>
                 <div class="location" id="location">

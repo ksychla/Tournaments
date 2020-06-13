@@ -26,6 +26,8 @@ class TournamentPlayerFixture extends TestFixture
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'player' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'tournament' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'licence' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'rank' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_tour_player' => ['type' => 'index', 'columns' => ['player'], 'length' => []],
             'fk_tour_tour' => ['type' => 'index', 'columns' => ['tournament'], 'length' => []],
@@ -53,6 +55,8 @@ class TournamentPlayerFixture extends TestFixture
                 'id' => 1,
                 'player' => 1,
                 'tournament' => 1,
+                'licence' => 1,
+                'rank' => 1,
             ],
         ];
         parent::init();

@@ -64,6 +64,14 @@ class TournamentPlayerTable extends Table
             ->requirePresence('tournament', 'create')
             ->notEmptyString('tournament');
 
+        $validator
+            ->integer('licence')
+            ->allowEmptyString('licence');
+
+        $validator
+            ->integer('rank')
+            ->allowEmptyString('rank');
+
         return $validator;
     }
 }

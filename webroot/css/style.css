@@ -238,7 +238,7 @@ form label{
     margin-left: 15px;
 }
 
-form input[type=submit], button[type=submit]{
+form input[type=submit], button[type=submit], .delete_button > a{
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #2b2b2b;
@@ -558,6 +558,22 @@ ol > li a:focus{
 .del_button:hover{
     cursor: pointer;
     background-color: #ccc;
+}
+
+.delete_button > a{
+    background-color: #FF5752 !important;
+    display: block;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete_button > a:hover{
+    background-color: #ee4641 !important;
 }
 
 @media screen and (max-width: 600px){
