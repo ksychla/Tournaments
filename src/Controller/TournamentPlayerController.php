@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
+use DateTime;
+
 /**
  * TournamentPlayer Controller
  *
@@ -59,17 +62,29 @@ class TournamentPlayerController extends AppController
         }
         $tournamentPlayer = $this->TournamentPlayer->newEmptyEntity();
         if ($this->request->is('post')) {
-            $tournamentPlayer = $this->TournamentPlayer->patchEntity($tournamentPlayer, $this->request->getData());
-            $tournamentPlayer->tournament = $tournament;
-            $tournamentPlayer->player = $identity->id;
-            if ($this->TournamentPlayer->save($tournamentPlayer)) {
-                $this->Flash->success(__('The tournament player has been saved.'));
+            $tour = TableRegistry::getTableLocator()->get('Tournament')->get($tournament);
+            $today = new DateTime();
+//            echo (string)$tour->deadline;
 
-                return $this->redirect('/tournament?id='.$tournament);
+            $deadline = new DateTime((string)$tour->deadline);
+            if ($tour->players >= $tour->players_limit || $today->diff($deadline)->d <= 0) {   // TODO Synchronize this
+                return $this->redirect('/');
             }
-            $this->Flash->error(__('The tournament player could not be saved. Please, try again.'));
+            $tour->players += 1;
+            if (TableRegistry::getTableLocator()->get('Tournament')->save($tour)) {
+                $tournamentPlayer = $this->TournamentPlayer->patchEntity($tournamentPlayer, $this->request->getData());
+                $tournamentPlayer->tournament = $tour->id;
+                $tournamentPlayer->player = $identity->id;
+                if ($this->TournamentPlayer->save($tournamentPlayer)) {
+                    $this->Flash->success(__('The tournament player has been saved.'));
+
+                    return $this->redirect('/tournament?id=' . $tour->id);
+                }
+                $this->Flash->error(__('The tournament player could not be saved. Please, try again.'));
+            }
         }
         $this->set(compact('tournamentPlayer'));
+
     }
 
     /**
