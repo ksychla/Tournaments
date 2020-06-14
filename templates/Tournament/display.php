@@ -9,7 +9,22 @@ $sponsorTour = TableRegistry::getTableLocator()->get('TournamentSponsor')->find(
 $sponsors = TableRegistry::getTableLocator()->get('Sponsor');
 $identity = $this->get('identity');
 $player = TableRegistry::getTableLocator()->get('TournamentPlayer')->find('all')->where(['player'=>$identity->id, 'tournament'=>$tournament->id])->first();
+$tourPlayers = TableRegistry::getTableLocator()->get('TournamentPlayer')->find('all', ['conditions'=>['tournament'=>$tournament->id]]);
+$tourPlayersPlaces = TableRegistry::getTableLocator()->get('PlayerPlace');
 
+$users_table = TableRegistry::getTableLocator()->get('Users');
+
+$bracket = [];
+
+foreach ($tourPlayers as $row){
+    $tourPlace = $tourPlayersPlaces->find('all', ['conditions'=>['tourPlay'=>$row->id]]);
+    foreach ($tourPlace as $col){
+        if(!array_key_exists($col->round, $bracket)){
+            $bracket[$col->round] = [];
+        }
+        $bracket[$col->round][$col->place] = [$row->player, $col->id];
+    }
+}
 
 function prepareForGoogleMaps($location){
     $regexp = "/\\s*,\\s*/";
@@ -76,6 +91,8 @@ function prepareForGoogleMaps($location){
                                 echo "<a href='/turnieje/tournament/edit?id=".$tournament->id."'>Edytuj</a>";
                             else if(!$player)
                                 echo "<a href='/turnieje/tournament/join?id=".$tournament->id."'>Dołącz</a>";
+                            else
+                                echo "<a href='/turnieje/tournament/win?id=".$tournament->id."'>Wygrałem</a>";
                         ?>
                     </div>
                 </div>
@@ -90,67 +107,49 @@ function prepareForGoogleMaps($location){
                 </div>
             </div>
             <div>
+
                 <div>
-                    <div class="my_gracket"></div>   <!-- TODO -->
+                    <div class="my_gracket"></div>
                 </div>
-
-
-                <script type="text/javascript">
+                <?php
+                $today = new DateTime();
+                $deadline = new DateTime($tournament->deadline);
+                if($today > $deadline){
+                    echo "<script>
                     (function(win, doc, $){
+                        // Data
+                        win.BracketData = [";
+                        foreach ($bracket as $row){
+                            $f = array_keys($row);
+                            echo '[';
+                            for($i=0; $i<count($f); $i+=2){
+                                $p1 = $users_table->get($row[$f[$i]][0]);
+                                $p1_id = $row[$f[$i]][1];
+                                if($i+1 < count($f)){
+                                    $p2 = $users_table->get($row[$f[$i+1]][0]);
+                                    $p2_id = $row[$f[$i+1]][1];
+                                    echo '[{name: \''.$p1->first_name.' '.$p1->last_name.'\', id: '.$p1->id.'},{name: \''.$p2->first_name.' '.$p2->last_name.'\', id: '.$p2->id.'}],';
+                                } else {
+                                    echo '[{name: \''.$p1->first_name.' '.$p1->last_name.'\', id: '.$p1->id.'}]';
+                                }
+                            }
+                            echo '],';
+                        }
 
-
-                        // Fake Data
-                        win.TestData = [
-                            [
-                                [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1, "displaySeed": "D1", "score" : 47 }, {"name" : "Andrew Miller", "id" : "andrew-miller", "seed" : 2} ],
-                                [ {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3}, {"name" : "Sam Merrill", "id" : "sam-merrill", "seed" : 4}],
-                                [ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Everett Zettersten", "id" : "everett-zettersten", "seed" : 6} ],
-                                [ {"name" : "John Scott", "id" : "john-scott", "seed" : 7}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
-                                [ {"name" : "Arnold Palmer", "id" : "arnold-palmer", "seed" : 9}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ],
-                                [ {"name" : "Jesse James", "id" : "jesse-james", "seed" : 1}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12}],
-                                [ {"name" : "Josh Groben", "id" : "josh-groben", "seed" : 13}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ],
-                                [ {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15}, {"name" : "Spencer Zettersten", "id" : "spencer-zettersten", "seed" : 16}]
-                            ],
-                            [
-                                [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3} ],
-                                [ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8} ],
-                                [ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12} ],
-                                [ {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}, {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15} ]
-                            ],
-                            [
-                                [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],
-                                [ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]
-                            ],
-                            [
-                                [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ]
-                            ],
-                            [
-                                [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1} ]
-                            ]
-                        ];
+                        echo"];
 
                         // initializer
-                        $(".my_gracket").gracket({ src : win.TestData });
+                        $(\".my_gracket\").gracket({ src : win.BracketData });
 
                     })(window, document, jQuery);
-                </script>
-                <script type="text/javascript">
+                </script>";
+                }
+                ?>
 
-                    var _gaq = _gaq || [];
-                    _gaq.push(['_setAccount', 'UA-36251023-1']);
-                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-                    _gaq.push(['_trackPageview']);
 
-                    (function() {
-                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                    })();
-
-                </script>
             </div>
             <div class="discipline sub-cat">
-                Sponsorzy    <!-- TODO -->
+                Sponsorzy
             </div>
             <div class="sponsors">
                 <?php
@@ -161,31 +160,7 @@ function prepareForGoogleMaps($location){
                         echo "</a></div>";
                     }
                 ?>
-<!--                <div>-->
-<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
-<!--                        --><?php //echo $this->Html->image('sponsors/politechnika.png', ['alt' => 'put.png']); ?>
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
-<!--                        --><?php //echo $this->Html->image('sponsors/rmf.png', ['alt' => 'put.png']); ?>
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
-<!--                        --><?php //echo $this->Html->image('sponsors/netflix.png', ['alt' => 'put.png']); ?>
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
-<!--                        --><?php //echo $this->Html->image('sponsors/volks.png', ['alt' => 'put.png']); ?>
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <a href="https://www.volkswagen.pl/" target="_blank">-->
-<!--                        --><?php //echo $this->Html->image('sponsors/tvn.png', ['alt' => 'put.png']); ?>
-<!--                    </a>-->
-<!--                </div>-->
+
             </div>
             <div class="discipline sub-cat">
                 Organizator

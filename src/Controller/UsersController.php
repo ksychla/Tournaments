@@ -7,6 +7,7 @@ use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\Mailer\TransportFactory;
 use Cake\Utility\Security;
 use Cake\Mailer\Mailer;
+use http\Client\Curl\User;
 
 /**
  * Users Controller
@@ -22,7 +23,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login', 'add', 'verify']);
+        $this->Authentication->addUnauthenticatedActions(['login', 'add', 'verify', 'forgot', 'forgotCheck']);
     }
 
     /**
@@ -74,7 +75,7 @@ class UsersController extends AppController
             $user->token = (new DefaultPasswordHasher())->hash($user->email);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                $this->verifyViaEmail($user->email, $user->token);
+                $this->newMail($user->email, $user->token);
                 return $this->redirect(['controller' => 'Pages', 'action' => 'display', 'home']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -97,7 +98,7 @@ class UsersController extends AppController
         }
     }
 
-    private function verifyViaEmail($email, $token){
+    private function verifyViaEmail(){
 
         TransportFactory::setConfig('gmail', [
             'host' => 'smtp.gmail.com',
@@ -108,14 +109,30 @@ class UsersController extends AppController
             'tls' => true
         ]);
 
+
+
+    }
+
+    private function newMail($email, $token){
+        $this->verifyViaEmail();
         $mailer = new Mailer(['from' => 'turnieje.reg.verify@gmail.com', 'transport' => 'gmail']);
         $mailer->setTo($email)
             ->setSubject('Potwierdzenie konta')
             ->deliver('Dziękujemy za założenie konta w naszym serwisie. Aktywuj swoje konto klikając w poniższy link
 
 http://localhost/turnieje/verify?token='.$token);
-
     }
+
+    private function forgotMail($email, $token){
+        $this->verifyViaEmail();
+        $mailer = new Mailer(['from' => 'turnieje.reg.verify@gmail.com', 'transport' => 'gmail']);
+        $mailer->setTo($email)
+            ->setSubject('Potwierdzenie konta')
+            ->deliver('Zapomniałeś hasła, oto twój link:
+
+http://localhost/turnieje/forgot/check?token='.$token);
+    }
+
 
     public function verify(){
         if($this->request->is('get')){
@@ -167,6 +184,38 @@ http://localhost/turnieje/verify?token='.$token);
                 $this->Flash->success(__('The user has been saved.'));
 
                 return $this->redirect('/');
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $this->set(compact('user'));
+    }
+
+    public function forgot(){
+        $user = $this->Users->newEmptyEntity();
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->find('all')->where(['email'=>$this->request->getData()['email']])->first();
+            if($user)
+                $this->forgotMail($user->email, $user->token);
+            return $this->redirect('/');
+
+//            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $this->set(compact('user'));
+    }
+
+    public function forgotCheck(){
+        $token = $this->request->getQuery('token');
+        if(!$token)
+            return $this->redirect('/');
+        $user = $this->Users->newEmptyEntity();
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->find('all')->where(['token'=>$token])->first();
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect('/login');
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }

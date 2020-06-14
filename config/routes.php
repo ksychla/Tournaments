@@ -64,6 +64,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
      */
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+    $builder->connect('/forgot', ['controller' => 'Users', 'action' => 'forgot']);
+    $builder->connect('/forgot/check', ['controller' => 'Users', 'action' => 'forgotCheck']);
     $builder->connect('/register', ['controller' => 'Users', 'action' => 'add']);
     $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
     $builder->connect('/verify/*', ['controller' => 'Users', 'action' => 'verify']);
@@ -72,6 +74,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/tournament', ['controller' => 'Tournament', 'action' => 'display']);
     $builder->connect('/tournament/join', ['controller' => 'TournamentPlayer', 'action' => 'add']);
     $builder->connect('/tournament/edit', ['controller' => 'Tournament', 'action' => 'edit']);
+    $builder->connect('/tournament/win', ['controller' => 'Tournament', 'action' => 'win']);
     $builder->connect('/search', ['controller' => 'Tournament', 'action' => 'search']);
 
 

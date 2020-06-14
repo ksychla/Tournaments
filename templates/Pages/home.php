@@ -72,9 +72,9 @@ $pages = $tournaments->count();
                     <div class='date ";
             $today = new DateTime();
             $deadline = new DateTime($rows->deadline);
-            if($today->diff($deadline)->d > 5)
+            if($today->diff($deadline)->d > 5 && $today->diff($deadline)->invert==0)
                 echo "date-green'>";
-            else if($today->diff($deadline)->d > 0)
+            else if($today->diff($deadline)->invert==0)
                 echo "date-yellow'>";
             else
                 echo "date-red'>";

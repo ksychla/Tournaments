@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class="link-div">
-                <a href="#" class="links">
+                <a href="/turnieje/forgot" class="links">
                     Nie pamiętasz hasła?
                 </a>
             </div>

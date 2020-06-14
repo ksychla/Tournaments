@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $tourPlay
  * @property int|null $place
+ * @property int|null $round
  */
 class PlayerPlace extends Entity
 {
@@ -26,5 +27,6 @@ class PlayerPlace extends Entity
     protected $_accessible = [
         'tourPlay' => true,
         'place' => true,
+        'round' => true,
     ];
 }

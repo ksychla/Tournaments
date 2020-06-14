@@ -25,6 +25,25 @@ class TournamentController extends AppController
         $this->set(compact('tournament'));
     }
 
+    public function win(){
+        $identity = $this->Authentication->getIdentity();
+        $id = $this->request->getQuery('id');
+        if(!$id)
+            $this->redirect('/');
+        $tourPlace = TableRegistry::getTableLocator()->get('PlayerPlace');
+        $tourPlayer = TableRegistry::getTableLocator()->get('TournamentPlayer');
+
+        $player = $tourPlayer->find('all')->where(['player'=>$identity->id, 'tournament'=>$id])->first();
+        $round = $tourPlace->find('all')->where(['tourPlay'=>$player->id])->order(['round'=>'DESC'])->first();
+
+        $new_place = $tourPlace->newEmptyEntity();
+        $new_place->tourPlay = $round->tourPlay;
+        $new_place->place = $round->place;
+        $new_place->round = $round->round+1;
+        if($tourPlace->save($new_place))
+            $this->redirect('/');
+    }
+
     public function search(){
         $identity = $this->Authentication->getIdentity();
         if($this->Authentication->getResult()->isValid()){

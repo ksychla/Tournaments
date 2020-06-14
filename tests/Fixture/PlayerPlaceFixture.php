@@ -26,6 +26,7 @@ class PlayerPlaceFixture extends TestFixture
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'tourPlay' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'place' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'round' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_place_tour' => ['type' => 'index', 'columns' => ['tourPlay'], 'length' => []],
         ],
@@ -51,6 +52,7 @@ class PlayerPlaceFixture extends TestFixture
                 'id' => 1,
                 'tourPlay' => 1,
                 'place' => 1,
+                'round' => 1,
             ],
         ];
         parent::init();

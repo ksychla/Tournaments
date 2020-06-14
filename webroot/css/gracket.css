@@ -53,3 +53,11 @@
     text-align: center;
     font-size: 18px;
 }
+
+.id_null{
+    background-color: #999 !important;
+}
+
+.id_null:hover{
+    cursor: default;
+}

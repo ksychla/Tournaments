@@ -63,6 +63,10 @@ class PlayerPlaceTable extends Table
             ->integer('place')
             ->allowEmptyString('place');
 
+        $validator
+            ->integer('round')
+            ->allowEmptyString('round');
+
         return $validator;
     }
 }

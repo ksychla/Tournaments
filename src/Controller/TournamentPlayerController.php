@@ -67,7 +67,7 @@ class TournamentPlayerController extends AppController
 //            echo (string)$tour->deadline;
 
             $deadline = new DateTime((string)$tour->deadline);
-            if ($tour->players >= $tour->players_limit || $today->diff($deadline)->d <= 0) {   // TODO Synchronize this
+            if ($tour->players >= $tour->players_limit || $today > $deadline) {   // TODO Synchronize this
                 return $this->redirect('/');
             }
             $tour->players += 1;
