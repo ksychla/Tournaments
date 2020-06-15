@@ -19,6 +19,7 @@
             echo $this->Form->control('email', array('label'=>false, 'placeholder'=>'Email'));
             echo $this->Form->control('password', array('label'=>false, 'placeholder'=>'Hasło'));
             ?>
+
             <?= $this->Form->button(__('Zaloguj')) ?>
             <?= $this->Form->end() ?>
 

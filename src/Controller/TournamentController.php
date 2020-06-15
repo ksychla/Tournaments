@@ -136,16 +136,13 @@ class TournamentController extends AppController
         if($this->Authentication->getResult()->isValid()){
             $this->set('identity', $identity);
         }
-        if($this->request->is('get')){
-            if($this->request->getQuery('id'))
-                $id = $this->request->getQuery('id');
-            else
-                return $this->redirect('/');
-        }
+        if($this->request->getQuery('id'))
+            $id = $this->request->getQuery('id');
+        else
+            return $this->redirect('/');
+        
 
-        $tournament = $this->Tournament->get($id, [
-            'contain' => [],
-        ]);
+        $tournament = $this->Tournament->get($id);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $tournament = $this->Tournament->patchEntity($tournament, $this->request->getData());
             if ($this->Tournament->save($tournament)) {

@@ -94,7 +94,6 @@ class UsersController extends AppController
             }
 
         }else{
-//            echo "NIE ZALOGOWANY";
         }
     }
 
